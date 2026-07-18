@@ -2,13 +2,14 @@ class Solution:
     def twoSum(self, nums, target):
         result=[]
 
-        for i in range (0, len(nums)):
-            first=nums[i]
-            for j in range(i+1, len(nums)):
-                if nums[i]+nums[j] == target:
-                    break
-            result.append([i,j])
-            return result
+        left=0
+        right=(len(nums)-1)
+        for right in nums:
+            if nums[left]+nums[right]== target:
+                result.append(left,right)
+            right-=1    
+
+
                     
 
 nums = [1,3,5,-7,6,-3]
